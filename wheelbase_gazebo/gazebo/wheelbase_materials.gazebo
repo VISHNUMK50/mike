@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+
+<robot name="wheelbase" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color1" value="Gazebo/White" />
+<xacro:property name="body_color2" value="Gazebo/Grey" />
+<xacro:property name="wheel_color" value="Gazebo/FlatBlack" />
+<xacro:property name="lidar_color" value="Gazebo/Blue" />
+
+<gazebo reference="base_link">
+  <material>${body_color1}</material>
+</gazebo>
+
+<gazebo reference="blbody_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="brbody_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="flbody_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="frbody_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="flwheel_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="frwheel_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="brwheel_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="blwheel_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="lmwheel_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="rmwheel_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="l_m_clamp_1">
+  <material>${body_color2}</material>
+
+</gazebo>
+
+<gazebo reference="r_m_clamp_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="topcover_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="basecover_1">
+  <material>${body_color2}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${lidar_color}</material>
+</gazebo>
+
+
+
+</robot>
