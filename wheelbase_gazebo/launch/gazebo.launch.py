@@ -27,6 +27,14 @@ def generate_launch_description():
         parameters= [{'use_sim_time': use_sim_time}],
     )
     
+    gazebo_launch_node = launch_ros.actions.Node(
+        package='gazebo_ros',
+            executable='spawn_entity.py',
+            arguments=['-entity', 'wheelbase', '-topic', 'robot_description'],
+            parameters= [{'use_sim_time': use_sim_time}],
+            output='screen'
+    )
+    
     return launch.LaunchDescription([
         launch.actions.ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 
                                             'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so' ], 
@@ -36,13 +44,9 @@ def generate_launch_description():
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                 description='Absolute path to robot urdf file'),
 
-        Node(
-            package='gazebo_ros',
-            executable='spawn_entity.py',
-            arguments=['-entity', 'wheelbase', '-topic', 'robot_description'],
-            parameters= [{'use_sim_time': use_sim_time}],
-            output='screen'),
         robot_state_publisher_node,
-        joint_state_publisher_node
+        joint_state_publisher_node,
+        gazebo_launch_node
+        
     ])
     
